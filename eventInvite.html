@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Invite</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="eventInvite.css" />
+</head>
+<body>
+<header>
+<div class="hero-content">
+    <h1>{{event_title}}</h1>
+    <p>{{event_subtitle}}</p>
+    <a href="#details" class="btn-primary">See Details</a>
+</div>
+</header>
+<section id="details" class="container">
+<h2 class="section-title">Event Details</h2>
+<div class="details-grid">
+    <div class="detail-card">
+    <h3>Date & Time</h3>
+    <p>{{event_date}}<br>{{event_time}}</p>
+    </div>
+    <div class="detail-card">
+    <h3>Venue</h3>
+    <p>{{event_venue}}<br>{{event_address}}</p>
+    </div>
+    <div class="detail-card">
+    <h3>Dress Code</h3>
+    <p>{{dress_code}}</p>
+    </div>
+</div>
+</section>
+
+<!-- Countdown Timer Section -->
+<section id="countdown-section" class="container">
+  <h2 class="section-title">Countdown to Event</h2>
+  <div id="countdown">
+    <div class="count-item">
+      <span id="days">0</span>
+      Days
+    </div>
+    <div class="count-item">
+      <span id="hours">0</span>
+      Hours
+    </div>
+    <div class="count-item">
+      <span id="minutes">0</span>
+      Minutes
+    </div>
+    <div class="count-item">
+      <span id="seconds">0</span>
+      Seconds
+    </div>
+  </div>
+</section>
+<!-- End Countdown Timer Section -->
+
+<section id="rsvp">
+<h2 class="section-title">RSVP</h2>
+<form class="rsvp-form" onsubmit="return handleSubmit(event)">
+    <div class="form-group">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" required/>
+    </div>
+    <div class="form-group">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" required/>
+    </div>
+    <div class="form-group">
+    <label for="guests">Number of Guests</label>
+    <input type="number" id="guests" name="guests" min="1" max="10" required/>
+    </div>
+    <div class="form-group">
+    <label for="message">Message (Optional)</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+    </div>
+    <button type="submit">Submit RSVP</button>
+</form>
+<div style="text-align:center;margin-top:2rem;">
+  <a href="myInvite.html" class="invite-link" style="background:#c59d5f;color:#fff;padding:0.7rem 2rem;border-radius:50px;text-decoration:none;font-weight:500;transition:background 0.2s;">Go to My Invites</a>
+</div>
+</section>
+<footer>
+© {{year}} {{event_footer_text}} | Designed by Rayan
+</footer>
+<script src="eventInvite.js" defer></script>
+</body>
+</html>

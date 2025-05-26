@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Your Event Invite</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="inviteForm.css" />
+</head>
+<body>
+  <nav>
+    <h1>InviteEase</h1>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="inviteForm.html">Get Started</a>
+      <a href="myInvite.html">My Invites</a>
+    </div>
+  </nav>
+  <div class="form-container">
+    <h1>Create Your Event Invite</h1>
+    <form id="eventForm">
+      <div class="form-group">
+        <label for="category">Event Category</label>
+        <select id="category" required>
+          <option value="">-- Select Category --</option>
+          <option value="social">Social & Personal</option>
+          <option value="corporate">Corporate & Professional</option>
+          <option value="educational">Educational</option>
+          <option value="cultural">Cultural & Entertainment</option>
+        </select>
+      </div>
+      <div class="form-group hidden" id="eventTypeGroup">
+        <label for="eventType">Event Type</label>
+        <select id="eventType" required></select>
+      </div>
+      <div class="form-group">
+        <label for="eventTitle">Title</label>
+        <input id="eventTitle" placeholder="e.g. Grand Gala Evening" required />
+      </div>
+      <div class="form-group">
+        <label for="eventSubtitle">Subtitle</label>
+        <input id="eventSubtitle" placeholder="e.g. A night of elegance & excitement" required />
+      </div>
+      <div class="form-group inline-flex">
+        <div style="flex:1; margin-right:.5rem;">
+          <label for="eventDate">Date</label>
+          <input type="date" id="eventDate" required />
+        </div>
+        <div style="flex:1; margin-left:.5rem;">
+          <label for="eventTime">Time</label>
+          <input id="eventTime" placeholder="e.g. 7:00 PM - Midnight" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="eventVenue">Venue</label>
+        <input id="eventVenue" placeholder="e.g. Crystal Ballroom" required />
+      </div>
+      <div class="form-group">
+        <label for="eventAddress">Address</label>
+        <textarea id="eventAddress" rows="2" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="dressCode">Dress Code</label>
+        <input id="dressCode" placeholder="e.g. Black Tie Formal" required />
+      </div>
+      <button type="submit">Generate Invite</button>
+    </form>
+    <div class="result hidden" id="linkContainer">
+      <p>Your invite is ready:</p>
+      <a href="#" class="invite-link" id="inviteLink">View Invitation</a>
+    </div>
+  </div>
+  <script src="inviteForm.js" defer></script>
+</body>
+</html>
